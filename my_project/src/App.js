@@ -79,9 +79,6 @@ function App() {
         <Route path="/carrents" element={<CarsData />} />
         <Route path="/carrents/:id" element={<Bookcar/>}/>
         <Route path="/carrents/booking/:id" element={<Bookingpage/>}/>
-        {/* <Route path="/carrents/booking/Orderpage/:id" element={<ModelPage />} /> */}
-
-        
         <Route path="/rating" element={<Ratingpage />} />
       </Routes>
     </Router>

@@ -1,3 +1,4 @@
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Form  } from "react-bootstrap";
@@ -7,7 +8,7 @@ import { useState } from "react";
 import { cars } from "../Vechical/CarsDataMain";
 import { useParams } from "react-router-dom";
 import "../Vechical/Card.css";
-import ModelPage from "./Model";
+
 
 
 function OrderCard(props) {
@@ -74,11 +75,10 @@ function OrderCard(props) {
       />
       </Form.Group>
 
-      <Link to={`/carrents/booking/Orderpage/${props.brand}`}>
   <Button variant="primary" type="submit" className="mt-3">
   Submit 
   </Button>
-</Link>
+
     </Form>
      
       {/* <Button variant="primary" disabled>Go somewhere</Button> */}
