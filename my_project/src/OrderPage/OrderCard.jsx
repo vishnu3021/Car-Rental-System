@@ -74,11 +74,11 @@ function OrderCard(props) {
       />
       </Form.Group>
 
-      {/* <Link to={`/carrents/booking/Orderpage/${props.brand}`}> */}
+      <Link to={`/carrents/booking/Orderpage/${props.brand}`}>
   <Button variant="primary" type="submit" className="mt-3">
   Submit 
   </Button>
-{/* </Link> */}
+</Link>
     </Form>
      
       {/* <Button variant="primary" disabled>Go somewhere</Button> */}
