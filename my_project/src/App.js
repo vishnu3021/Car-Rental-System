@@ -12,8 +12,7 @@ import CarsData from './Vechical/CarsData';
 import Bookcar from './Vechical/Bookcar';
 import Ratingpage from './RatingPage/Ratingpage';
 import Bookingpage from './Vechical/Bookingpage';
-import OrderCard from './OrderPage/OrderCard';
-import ModelPage from './OrderPage/Model';
+
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
