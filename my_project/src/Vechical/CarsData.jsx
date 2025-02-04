@@ -7,8 +7,7 @@ import "./carsData.css";
 import { cars } from "./CarsDataMain";
 
 export default function CarsData() {
-
-  const [filteredCars, setFilteredCars] = useState(cars);
+   const [filteredCars, setFilteredCars] = useState(cars);
   const filterCars = (type) => {
     if (type === "All") {
       setFilteredCars(cars);
@@ -23,12 +22,13 @@ export default function CarsData() {
         style={{
           display: "flex",
           justifyContent: "space-around",
+          gap:"1em",
           margin: "0.9em",
-          backgroundColor: "black",
-        }}
+          // backgroundColor: "#ceff00",
+        }} className="buttons"
       >
         <Button
-          variant="primary"
+          variant="outline-primary"
           size="lg"
           onClick={() => {
             filterCars("All");
@@ -37,7 +37,7 @@ export default function CarsData() {
           ALL
         </Button>
         <Button
-          variant="secondary"
+          variant="outline-secondary"
           size="lg"
           onClick={() => {
             filterCars("Petrol");
@@ -46,7 +46,7 @@ export default function CarsData() {
           Petrol
         </Button>
         <Button
-          variant="success"
+          variant="outline-success"
           size="lg"
           onClick={() => {
             filterCars("Diesel");
@@ -55,7 +55,7 @@ export default function CarsData() {
           Diesel
         </Button>
         <Button
-          variant="warning"
+          variant="outline-warning"
           size="lg"
           onClick={() => {
             filterCars("EV");
@@ -69,7 +69,7 @@ export default function CarsData() {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-around",
-          marginTop: "1em",
+          // marginTop: "1em",
           gap: "2em",
         }}
       >

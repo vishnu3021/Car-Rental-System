@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
+import CarLogo from "./carLogo.png"
 import Offcanvas from 'react-bootstrap/Offcanvas'; // For mobile Offcanvas menu
+import "./App.css"
 
 // Import your custom components
 import Home from './components/Home';
@@ -12,7 +14,8 @@ import CarsData from './Vechical/CarsData';
 import Bookcar from './Vechical/Bookcar';
 import Ratingpage from './RatingPage/Ratingpage';
 import Bookingpage from './Vechical/Bookingpage';
-
+import OrderCard from './OrderPage/OrderCard';
+import ModelPage from './OrderPage/Model';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -36,7 +39,9 @@ function App() {
     <Navbar bg="primary" expand={false} sticky="top" className="mb-3" data-bs-theme="dark">
       <Container>
         <Navbar.Brand as={Link} to="/"> 
-        Cая Яёптаг</Navbar.Brand>
+        <img src={CarLogo} alt='logo'style={{height:"8vh", width:"10vh"}}/>
+      {/* <span>  Cая Яёптаг</span> */}
+      </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="start">
           <Offcanvas.Header closeButton>
@@ -78,6 +83,7 @@ function App() {
         <Route path="/carrents" element={<CarsData />} />
         <Route path="/carrents/:id" element={<Bookcar/>}/>
         <Route path="/carrents/booking/:id" element={<Bookingpage/>}/>
+        {/* <Route path="/carrents/booking/Orderpage/:id" element={<ModelPage />} /> */}
         <Route path="/rating" element={<Ratingpage />} />
       </Routes>
     </Router>

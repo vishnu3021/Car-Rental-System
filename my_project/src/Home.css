@@ -2,6 +2,7 @@ img{
     height: 95vh;
     width: 80vh;
 }
+
 h5{
     font-size: 1.5rem;
     color: orange;
@@ -34,6 +35,9 @@ h5{
     .img:hover{
         transform: scale(1.1);
         /* transform: translateY(5px); */
+    }
+    .carousel{
+        margin-top: -1em;
     }
 
   }

@@ -1,6 +1,14 @@
 .App {
   text-align: center;
 }
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon:hover {
+  border-radius: 50%; 
+  width: 10px; 
+  height: 20px;
+  background-color: red !important;
+  
+} */
 
 .App-logo {
   height: 40vmin;

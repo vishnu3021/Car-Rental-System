@@ -1,7 +1,8 @@
 import React from 'react'
 import CarsData from '../Vechical/CarsData'
 import Homes from '../Home';
-import Ratingpage from '../RatingPage/Ratingpage'
+import Ratingpage from '../RatingPage/Ratingpage';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <Homes/>
         <CarsData/>
         <Ratingpage/>
+        <Footer/>
       </div>
       
     

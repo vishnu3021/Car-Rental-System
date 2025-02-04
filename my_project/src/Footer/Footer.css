@@ -1,0 +1,39 @@
+.Footer{
+    background-color:  black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    color: whitesmoke;
+    /* margin-top: 2em; */
+    /* height: 50vh; */
+    /* width: 60vh; */
+}
+.SocialMedia{
+    color: white; 
+    background-color:  black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+@media screen and (max-width: 768px){
+    .Footer{
+        color: white;
+        background-color: #0d6efd;
+        height: 30vh;
+    }
+    .SocialMedia{
+        margin-top: -1em;
+        color: white;
+        background-color: #0d6efd;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (min-width: 769px){
+.Footer{
+        width: 100vw;
+        height: 20vh;
+    }
+}

@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-prev-icon, .custom-next-icon {
+  font-size: 30px;
+  color: red; /* Change to desired color */
+}

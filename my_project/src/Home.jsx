@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css"
 import React from 'react';
 
-
 function Home() {
   return (
-    <div>
-    <Carousel data-bs-theme="primary">
+    <div >
+    <Carousel data-bs-theme="primary" className='carousel'>
       <Carousel.Item>
         <img
           className='d-block h-100  w-100  img'
@@ -15,32 +14,32 @@ function Home() {
           alt="First slide" height="10%"
         />
         <Carousel.Caption>
-          <h5>Bentley Continental GT</h5>
-          <p className='carintro'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          {/* <h5>Bentley Continental GT</h5>
+          <p className='carintro'>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className='d-block w-100 img'
+        <img  className='d-block h-100  w-100  img'
         
           src="https://www.motortrend.com/uploads/2022/11/2024-audi-q8-sportback-front-three-quarter.jpg"
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Audi e-tron GT Concept</h5>
-          <p className='carintro'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          {/* <h5>Audi e-tron GT Concept</h5>
+          <p className='carintro'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100 img"
+           className='d-block h-100  w-100  img'
           src="https://www.teslarati.com/wp-content/uploads/2022/09/Tiago-EV-Charging-scaled.jpg"
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5>EV Vechile</h5>
+          {/* <h5>EV Vechile</h5>
           <p className='carintro'>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          </p> */}
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
