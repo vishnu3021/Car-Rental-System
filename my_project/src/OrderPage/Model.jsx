@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import { Link } from 'react-router-dom';
 function Modalcom({image}) {
   
   const [show, setShow] = useState(false);
@@ -31,10 +31,10 @@ function Modalcom({image}) {
           
           
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer><Link to="/">
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
+          </Button></Link>
        
         </Modal.Footer>
       </Modal>

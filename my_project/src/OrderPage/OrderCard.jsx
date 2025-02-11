@@ -23,8 +23,8 @@ function OrderCard(props) {
   };
 
   const cardStyle = {
-    width: "44vh",
-    height: "43rem",
+    width: "100vh",
+    height: "42rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -38,10 +38,13 @@ function OrderCard(props) {
 
   const cardHoverStyle = {
     transform: "scale(1.02)", // Slightly enlarges on hover
-    boxShadow: `0 8px 15px rgba(255, 165, 0, 0.6), 
+    boxShadow: `0 8px 15px rgba(30, 30, 29, 0.6), 
                 0 10px 20px rgba(173, 216, 230, 0.6), 
-                0 12px 25px rgba(144, 238, 144, 0.6), 
-                0 14px 30px rgba(255, 215, 0, 0.6)`, // Vibrant box shadow on hover
+                0 12px 25px rgba(24, 25, 24, 0.6), 
+                0 14px 30px rgba(6, 6, 6, 0.6)`, // Vibrant box shadow on hover
+    // width:"70vh",
+    height: "48rem",
+    
   };
 
   const cardBodyStyle = {
@@ -78,6 +81,7 @@ function OrderCard(props) {
     letterSpacing: "1px",
     borderRadius: "5px",
     transition: "background-color 0.3s ease",
+    marginTop:"-15px"
   };
 
   const submitButtonHoverStyle = {
@@ -96,7 +100,7 @@ function OrderCard(props) {
 
   return (
     <div style={cardContainerStyle} className="position-relative">
-      <Card
+      <Card 
         style={{ ...cardStyle, ...(hover ? cardHoverStyle : {}) }}
         onMouseEnter={() => setHover(true)} // Activate hover effect
         onMouseLeave={() => setHover(false)} // Deactivate hover effect
@@ -121,7 +125,7 @@ function OrderCard(props) {
           <Form onSubmit={handleSubmit} style={formStyle}>
             <Form.Group controlId="fromDate">
               <Form.Label>From:</Form.Label>
-              <Form.Control type="date" required />
+              <Form.Control type="date" required/>
             </Form.Group>
             <Form.Group controlId="toDate">
               <Form.Label>To:</Form.Label>

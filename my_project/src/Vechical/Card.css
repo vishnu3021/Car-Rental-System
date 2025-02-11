@@ -1,7 +1,7 @@
 .image:hover{
-    transform: scale(1.1);
+    /* transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
-    box-shadow: 5px 5px 5px gray, -5px -5px 10px blue;
+    box-shadow: 5px 5px 5px gray, -5px -5px 10px blue; */
 
 }
 /* Card.Body{
@@ -11,32 +11,48 @@ transform: scale(1.1);
 
 .cardMain:hover{
     backdrop-filter: blur(20px);
-    transform: scale(1.1);
-   
-    
+    transform: scale(1.1);   
 }
-@media (min-width:330px){
+@media (min-width: 330px) and (max-width: 766px) {
     .cardMain:hover{
         transform: scale(1.1);
-        height: 100vh;
+        height: 1vh;
         transition: transform 0.1s ease-out;
-        background-color: black;
         color: wheat;
+    }
+    
+    .gifClass{
+        display: none;
     }
 
 }
 @media (min-width: 768px) {
-  .image:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 5px 5px 5px gray, -5px -5px 10px rgb(18, 18, 18);
+    .image:hover {
+        /* transform: scale(1.1);
+        transition: transform 0.2s ease-in-out;
+        box-shadow: 5px 5px 5px gray, -5px -5px 10px rgb(18, 18, 18); */
+    }
 
+    .cardMain:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        transition: transform 0.1s ease-out;
+        /* background-color: black; */
+        color: blue;
+    }
+
+    .Gifdiv {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2em;
+        margin-top: -0.5em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gifClass {
+        height: 70vh;
+        width: 70vw;
+    }
 }
-.cardMain:hover{
-    transform: scale(1.1);
-    height: 100vh;
-    transition: transform 0.1s ease-out;
-    background-color: black;
-    color: wheat;
-}
-  }
+ 
