@@ -1,31 +1,23 @@
-import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "./Footer.css";
-import instagramLogo from "./instagramLogo.png"
- function Footer(){
-return(
 
-        <div className="Footer">
-    <span>For Booking Contact:+91123654789</span>
-    <br/>
-    <span>Customer Support:1008155155</span>
-    <br/>
-    <span>E-Mail:carrental@carrental.com</span>
-    <br/>
-    <span>Address:ACB Street at Manikonda , Hyderbad </span>
-    <br/>
-    <span>&copy;
-    Copy Right :vishnu@gmail.com</span>
-    <br />
-    {/* <div className="SocialMedia"> */}
-    <span>Follow us :</span>
-    <br/>
-   
-    <span><span> <image src={instagramLogo} alt="insta"/> </span>@carRental_123</span>
+const Footer = () => {
+  return (
+    <footer className="footer-container">
+      <div className="footer-content">
+        <p className="footer-text">Email: support@example.com</p>
+        <p className="footer-text">Customer Support: +91800000000</p>
+        <p className="footer-text">Address: 123 Main St, Hyderabad, Telangana</p>
+        <div className="social-icons">
+          <a href="https://facebook.com" className="social-icon" title="FaceBook"><FaFacebook  size={30} style={{ color: '#3b5998' }} /></a>
+          <a href="https://twitter.com" className="social-icon" title="Twitter"><FaTwitter size={30} style={{ color: '#1da1f2' }} /></a>
+          <a href="https://instagram.com" className="social-icon" title="Instagram"><FaInstagram  size={30} style={{ color: '#c13584' }}/></a>
+          <a href="https://linkedin.com" className="social-icon" title="LinkedIn"><FaLinkedin size={30} style={{ color: '#0077b5' }} /></a>
+        </div>
+        © {new Date().getFullYear()} vishnu pvt. All Rights Reserved.
+      </div>
+    </footer>
+  );
+};
 
-    {/* </div> */}
-   
-    <span></span>
-   </div>
-)
- }
- export default Footer;
+export default Footer;

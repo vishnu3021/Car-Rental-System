@@ -68,14 +68,17 @@ export default function CarsData() {
         style={{
           display: "flex",
           flexWrap: "wrap",
+          justifyContent:"center",
+          gap:"0.9em",
+          // marginLeft:"2em",
           // marginTop: "1em",
-        marginLeft:'5px'
+        // marginLeft:'5px'
         }}
       >
         {filteredCars.map((cars, index) => {
           return (
             <div key={index} style={{
-         margin:"1%"
+        //  margin:"1%"
             }}>
               <Cards
                 image={cars.image}

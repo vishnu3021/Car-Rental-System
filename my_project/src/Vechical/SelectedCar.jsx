@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 // import RightArrow from './RightArrow.png';
-import RightArrow from "./RightArrow.png";
-import LeftArrow from "./LeftArrow.png";
+// import RightArrow from "./RightArrow.png";
+// import LeftArrow from "./LeftArrow.png";
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 // import Button from 'react-bootstrap/Button';
 // import Card from 'react-bootstrap/Card';
@@ -16,8 +16,8 @@ export default function SelectedCar( props ) {
         <div>
             {/* <h2>Selected Car</h2> */}
             <Carousel data-bs-theme="dark" 
-  prevIcon={<span className="custom-prev-icon"> <img src={LeftArrow} alt="image"  style={{height:"50px", width:"50px"}}/>  </span>}
-  nextIcon={<span className="custom-next-icon"> <img src={RightArrow} alt="image"  style={{height:"50px", width:"50px"}}/> </span>}>
+  prevIcon={<span className="custom-prev-icon"> <img src="https://img.icons8.com/?size=100&id=100948&format=png&color=000000" alt="Left arrow"  style={{height:"50px", width:"50px"}}/>  </span>}
+  nextIcon={<span className="custom-next-icon"> <img src="https://img.icons8.com/?size=100&id=37225&format=png&color=000000" alt="right arrow"  style={{height:"50px", width:"50px"}}/> </span>}>
       <Carousel.Item>
         <img 
       className='d-block h-40vh w-100 img'
@@ -58,7 +58,7 @@ export default function SelectedCar( props ) {
       </Carousel.Item>
     </Carousel>
    
-    {/* <Link to ={`/carrents/${props.brand}`} style={{textDecoration:"none"}}>  <Button variant="primary">Go somewhere</Button></Link> */}
+    {/* <Link to ={`/currents/${props.brand}`} style={{textDecoration:"none"}}>  <Button variant="primary">Go somewhere</Button></Link> */}
 
         </div>
     );

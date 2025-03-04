@@ -1,49 +1,46 @@
-img{
-    height: 95vh;
-    width: 80vh;
+.coursel_image{
+    height: 70vh; /* Set height to 50% of the viewport height */
+    width: 100vw;
+    object-fit: cover;
 }
 
-h5{
-    font-size: 1.5rem;
-    color: orange;
-   
-}
-.carintro{
-    font-size: 1.2rem;
-    color: blueviolet;
-}
+
+
 .img:hover{
     transform: scale(1.1);
     /* transform: translateY(5px); */
 }
 @media (min-width: 320px) {
-    /* CSS rules for screens wider than 720px */
     img{
         height: 95vh;
         width: 80vh;
     }
-    h5{
-        font-size: 1.5rem;
-        /* color: orange; */
-        /* background-color: brown; */
-       
-    }
+    .img{
+        height: 30vh;
+        width: 100vw;
+     }
+
     .carintro{
         font-size: 1.2rem;
         color: orange;
     }
     .img:hover{
         transform: scale(1.1);
-        /* transform: translateY(5px); */
+       
     }
     .carousel{
-        margin-top: -1em;
+        margin-top: -0.99em;
     }
-
+    .coursel_image{
+        height: 50vh; 
+        width: 100vh;
+     
+    }
   }
   @media (min-width: 768px) {
-    .carintro{
-        font-size: 1.2rem;
-        color: red;
-    }
+    .img{
+        height: 80vh;
+        width: 100vw;
+     }
+  
   }

@@ -4,17 +4,15 @@
     box-shadow: 5px 5px 5px gray, -5px -5px 10px blue;
 
 }
-/* Card.Body{
-backdrop-filter: blur(20px);
-transform: scale(1.1);
-} */
-
 .cardMain:hover{
     backdrop-filter: blur(20px);
     transform: scale(1.1);
    
     
 }
+/* .position-relative{
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Flovepik.com%2Fimages%2Fphoto-car.html&psig=AOvVaw0IX1hAh4gNbCiDDi-vA2xh&ust=1738739529538000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCYwtK7qYsDFQAAAAAdAAAAABAE");
+} */
 @media (min-width:330px){
     .cardMain:hover{
         transform: scale(1.1);

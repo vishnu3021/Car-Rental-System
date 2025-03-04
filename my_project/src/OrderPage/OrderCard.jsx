@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Form } from "react-bootstrap";
-import { useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom"; // useNavigate for programmatic navigation
 import { cars } from "../Vechical/CarsDataMain";
-import { useParams } from "react-router-dom";
 import "../Vechical/Card.css";
-import Modalcom from "./Model";
-// import './OrderCard.css'
 
-function OrderCard(props) {
+function OrderCard({ image, BrandName, price, brand }) {
+  const [hover, setHover] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false); // State to handle form submission
+  const navigate = useNavigate(); // Hook for programmatic navigation
 
-  const [showmodal,setShowmodal]=useState(false)
   const cardContainerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -32,19 +32,14 @@ function OrderCard(props) {
     borderRadius: "15px",
     overflow: "hidden",
     backgroundColor: "#fff",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Subtle shadow in normal state
-    transition: "transform 0.3s ease, box-shadow 0.3s ease", // Smooth animation
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
   };
 
   const cardHoverStyle = {
-    transform: "scale(1.02)", // Slightly enlarges on hover
-    boxShadow: `0 8px 15px rgba(30, 30, 29, 0.6), 
-                0 10px 20px rgba(173, 216, 230, 0.6), 
-                0 12px 25px rgba(24, 25, 24, 0.6), 
-                0 14px 30px rgba(6, 6, 6, 0.6)`, // Vibrant box shadow on hover
-    // width:"70vh",
+    transform: "scale(1.02)",
+    boxShadow: "0 8px 15px rgba(30, 30, 29, 0.6), 0 10px 20px rgba(173, 216, 230, 0.6), 0 12px 25px rgba(24, 25, 24, 0.6), 0 14px 30px rgba(6, 6, 6, 0.6)",
     height: "48rem",
-    
   };
 
   const cardBodyStyle = {
@@ -55,13 +50,13 @@ function OrderCard(props) {
   };
 
   const imageStyle = {
-    height: "200px", // Default height
+    height: "200px",
     objectFit: "cover",
-    transition: "height 0.3s ease", // Smooth height animation
+    transition: "height 0.3s ease",
   };
 
   const imageHoverStyle = {
-    height: "250px", // Height on hover
+    height: "250px",
   };
 
   const formStyle = {
@@ -81,18 +76,20 @@ function OrderCard(props) {
     letterSpacing: "1px",
     borderRadius: "5px",
     transition: "background-color 0.3s ease",
-    marginTop:"-15px"
+    marginTop: "-15px",
+    width: "45vw",
   };
-
-  const submitButtonHoverStyle = {
-    backgroundColor: "#007bff",
-  };
-
-  const [hover, setHover] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert("Successfully booked " + props.BrandName);
+    setFormSubmitted(true); // Set form as submitted to show the popup/modal
+
+    // Show the modal and navigate after 1 second
+    setTimeout(() => {
+      setShowModal(false); // Hide the modal after 1 second
+      navigate("/"); // Navigate to home page
+    }, 5000);
+   
   };
 
   const { id } = useParams();
@@ -100,32 +97,33 @@ function OrderCard(props) {
 
   return (
     <div style={cardContainerStyle} className="position-relative">
-      <Card 
+      <Card
         style={{ ...cardStyle, ...(hover ? cardHoverStyle : {}) }}
-        onMouseEnter={() => setHover(true)} // Activate hover effect
-        onMouseLeave={() => setHover(false)} // Deactivate hover effect
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
         <Card.Img
-          variant="top" className="image"
-          src={props.image}
-          style={{ ...imageStyle, ...(hover ? imageHoverStyle : {}) }} // Adjust image height on hover
+          variant="top"
+          className="image"
+          src={image}
+          style={{ ...imageStyle, ...(hover ? imageHoverStyle : {}) }}
         />
         <Card.Body style={cardBodyStyle}>
           <Card.Title style={{ fontSize: "24px", fontWeight: "bold" }}>
             Booking Car
           </Card.Title>
           <Card.Text style={{ fontSize: "16px", color: "#555" }}>
-            Brand Name: <b>{props.BrandName}</b>
+            Brand Name: <b>{BrandName}</b>
             <br />
-            Price: <b>{props.price}</b>
+            Price: <b>{price}</b>
             <br />
-            Brand: {props.brand}
+            Brand: {brand}
           </Card.Text>
 
           <Form onSubmit={handleSubmit} style={formStyle}>
             <Form.Group controlId="fromDate">
               <Form.Label>From:</Form.Label>
-              <Form.Control type="date" required/>
+              <Form.Control type="date" required />
             </Form.Group>
             <Form.Group controlId="toDate">
               <Form.Label>To:</Form.Label>
@@ -149,22 +147,37 @@ function OrderCard(props) {
                 style={{ marginTop: "10px" }}
               />
             </Form.Group>
+
             <Button
-            
               type="submit"
               style={submitButtonStyle}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = submitButtonHoverStyle.backgroundColor;
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = submitButtonStyle.backgroundColor;
-              }}
             >
-             <Modalcom image={props.image}/>
+              Submit
             </Button>
           </Form>
         </Card.Body>
       </Card>
+
+      {/* Popup modal */}
+      {formSubmitted && (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            background: "rgba(0, 0, 0, 0.8)",
+            padding: "20px",
+            borderRadius: "10px",
+            color: "white",
+            fontSize: "18px",
+            textAlign: "center",
+          }}
+        >
+          <h4>Your booking is confirmed!</h4>
+          <p>Redirecting...</p>
+        </div>
+      )}
     </div>
   );
 }
