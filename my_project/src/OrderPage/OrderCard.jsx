@@ -117,7 +117,7 @@ function OrderCard({ image, BrandName, price, brand }) {
             <br />
             Price: <b>{price}</b>
             <br />
-            Brand: {brand}
+            {/* Brand: {brand} */}
           </Card.Text>
 
           <Form onSubmit={handleSubmit} style={formStyle}>
